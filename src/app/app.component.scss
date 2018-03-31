@@ -1,0 +1,20 @@
+.toolbar {
+    display: flex;
+    align-items: center;
+    background: #2B2B2B;
+}
+
+ul {
+    margin-bottom: 0px;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    flex: 0.5;
+    color: #fff;
+}
+
+.link {
+    color: #fff;
+}

@@ -1,0 +1,18 @@
+{
+  "/store": {
+    "target": "http://store.steampowered.com",
+    "secure": true,
+    "pathRewrite": {
+      "^/store": ""
+    },
+    "changeOrigin": true
+  },
+  "/spy": {
+    "target": "https://steamspy.com",
+    "secure": true,
+    "pathRewrite": {
+      "^/spy": ""
+    },
+    "changeOrigin": true
+  }
+}

@@ -1,0 +1,13 @@
+<mat-card>
+  <ng-container *ngIf="game; else loading">
+    <mat-card-title>
+      <h1>{{ game.name }}</h1>
+    </mat-card-title>
+    <mat-card-content>
+
+    </mat-card-content>
+  </ng-container>
+  <ng-template #loading>
+    <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+  </ng-template>
+</mat-card>

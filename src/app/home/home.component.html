@@ -1,0 +1,23 @@
+<mat-list>
+  <mat-card>
+    <mat-card-title>
+      <h1>Top 100 of the week</h1>
+    </mat-card-title>
+    <mat-card-content>
+      <div class="row" *ngFor="let game of games; let i = index" (click)="goToDetail(game.appid)">
+        <div class="index">{{ i + 1 }}</div>
+        <div class="name">{{ game.name }}</div>
+        <div class="publisher">
+          {{ game.publisher }}
+        </div>
+        <div class="developer">
+          {{ game.developer }}
+        </div>
+        <div class="owners">
+          <mat-icon color="primary" class="face">face</mat-icon>
+          <span>{{ game.owners / 1000000 | number : '1.2-2' }} M</span>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mat-list>
