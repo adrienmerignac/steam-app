@@ -6,16 +6,20 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
+import { DragScrollModule } from 'ngx-drag-scroll';
+import { GameItemComponent } from './home/game-item/game-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    GameItemComponent
   ],
   imports: [
     SharedModule,
+    DragScrollModule
   ],
   providers: [SteamService],
   bootstrap: [AppComponent]

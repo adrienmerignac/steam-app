@@ -5,14 +5,13 @@
 
 body {
     background: #DCDCDC;
-    padding: 3em;
     font-family: 'Cursive', 'Arial';
     color: #333;
-    padding-top: 0px;
+    padding-top: 0;
+    margin: 0;
 }
 ul {
     list-style-type: none;
-    margin: 0 0 2em 0;
     padding: 0;
 }
 ul li {
@@ -29,4 +28,5 @@ a {
 
 mat-card {
     background: #fff;
+    margin: 3rem;
 }

@@ -1,13 +1,74 @@
-<mat-card>
-  <ng-container *ngIf="game; else loading">
-    <mat-card-title>
-      <h1>{{ game.name }}</h1>
-    </mat-card-title>
-    <mat-card-content>
-
-    </mat-card-content>
-  </ng-container>
-  <ng-template #loading>
-    <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
-  </ng-template>
-</mat-card>
+<div class="main" [style.background-image]="'url(' + game.background + ')'">
+  <mat-card>
+    <ng-container *ngIf="game; else loading">
+      <mat-card-title>
+        <div class="title">
+          <img [src]="game.header_image" class="thumbnail">
+          <h1>{{ game.name }}</h1>
+        </div>
+      </mat-card-title>
+      <mat-card-content>
+        <div class="description">
+          <strong>Description</strong>
+          <div [innerHTML]="game.detailed_description"></div>
+        </div>
+        <div class="row">
+          <div>
+            <strong>Age</strong>
+            <span class="age">{{ game.required_age }}+</span>
+          </div>
+          <div class="website">
+            <strong>Site</strong>
+            <span>
+              <a [href]="game.website" target="_blank" class="site">{{ game.website }}</a>
+            </span>
+          </div>
+          <div>
+            <strong>Genre</strong>
+            <span class="genre" *ngFor="let genre of game.genres">{{ genre.description }}</span>
+          </div>
+          <div>
+            <strong>Catégories</strong>
+            <div>
+              <span class="categorie" *ngFor="let categorie of game.categories">{{ categorie.description }}.</span>
+            </div>
+          </div>
+          <div>
+            <strong>Développeurs</strong>
+            <span class="developers" *ngFor="let developer of game.developers">{{ developer }}</span>
+          </div>
+          <div>
+            <strong>Editeurs</strong>
+            <span class="publishers" *ngFor="let publisher of game.publishers">{{ publisher }}</span>
+          </div>
+          <div>
+            <strong>Date</strong>
+            <span class="date">{{ game.release_date.date }}</span>
+          </div>
+          <div class="prix">
+            <strong class="titleprix">Prix</strong>
+            <div>
+              <span class="price" *ngIf="!game.is_free">
+                {{ game.price_overview.final / 100 | number : '1.2-2' }}€
+              </span>
+              <span class="price" *ngIf="game.is_free">
+                Gratuit
+              </span>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+      <div>
+        <strong class="screen">Screenshots</strong>
+        <div class="size" *ngFor="let screenshot of game.screenshots">
+          <a [href]="screenshot.path_full" target="_blank">
+            <img class="screenshots" [src]="screenshot.path_thumbnail">
+          </a>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+    </ng-template>
+  </mat-card>
+</div>
