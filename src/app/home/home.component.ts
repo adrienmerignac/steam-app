@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  public goToDetail(id: number) {
+  public onSelect(id: number) {
     console.log(id);
     this.router.navigate(['/details', id]);
   }
