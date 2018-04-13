@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { DragScrollModule } from 'ngx-drag-scroll';
-import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 
@@ -16,7 +15,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     AppComponent,
     HomeComponent,
     DetailsComponent,
-    SidenavComponent,
   ],
   imports: [
     SharedModule,
