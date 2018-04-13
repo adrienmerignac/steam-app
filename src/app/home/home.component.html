@@ -1,19 +1,19 @@
-<mat-list>
-  <mat-card>
-    <mat-card-title>
-      <h1>Top 100 of the two last week</h1>
-    </mat-card-title>
-    <mat-card-content>
-      <app-game-item
-        *ngFor="let game of games; let i = index" 
-        [appid]="game.appid"
-        [rank]="i + 1"
-        [name]="game.name"
-        [publisher]="game.publisher"
-        [developer]="game.developer"
-        [owners]="game.owners"
-        (select)="onSelect($event)"
-      ></app-game-item>
-    </mat-card-content>
-  </mat-card>
-</mat-list>
+<mat-card class="make-scrollable">
+  <mat-card-title>
+    <h2>Steam Games</h2>
+  </mat-card-title>
+  <mat-card-content>
+    <div class="row">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input style="width: 100%;" matInput placeholder="Rechercher un jeu" [matAutocomplete]="auto" [formControl]="search">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let game of filteredGames" [value]="game.name" (onSelectionChange)="goToDetail(game.appid)">
+            <span>{{ game.name }}</span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </div>
+  </mat-card-content>
+</mat-card>

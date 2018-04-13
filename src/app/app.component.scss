@@ -1,20 +1,15 @@
-.toolbar {
-    display: flex;
-    align-items: center;
-    background: #2B2B2B;
-}
-
-ul {
-    margin: 2em;
+.primary {
+    background: #000;
+    width: 100%;
 }
 
 .title {
     font-size: 1.5em;
-    font-weight: bold;
-    flex: 0.5;
+    flex: 1;
     color: #fff;
+    padding-left: 1em;
 }
 
-.link {
+.mat-icon-button {
     color: #fff;
 }

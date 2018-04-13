@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from './material.module';
@@ -15,7 +15,8 @@ import { AppRoutingModule } from '../app-routing.module';
         BrowserAnimationsModule,
         AppRoutingModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
     ],
     exports: [
         MaterialModule,
@@ -23,7 +24,8 @@ import { AppRoutingModule } from '../app-routing.module';
         BrowserAnimationsModule,
         AppRoutingModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
     ],
   })
 

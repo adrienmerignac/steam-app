@@ -105,25 +105,8 @@ export interface GameDetails {
     background: string;
 }
 
-// SteamSpy game
-export interface SteamSpyGame {
+// Steam games
+export interface SteamGame {
     appid: number;
     name: string;
-    developer: string;
-    publisher: string;
-    score_rank: number;
-    positive: number;
-    negative: number;
-    userscore: number;
-    owners: number;
-    owners_variance: number;
-    players_forever: number;
-    players_forever_variance: number;
-    players_2weeks: number;
-    players_2weeks_variance: number;
-    average_forever: number;
-    average_2weeks: number;
-    median_forever: number;
-    median_2weeks: number;
-    price: string;
 }

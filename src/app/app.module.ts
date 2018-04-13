@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { DragScrollModule } from 'ngx-drag-scroll';
-import { GameItemComponent } from './home/game-item/game-item.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+
 
 
 @NgModule({
@@ -15,11 +16,11 @@ import { GameItemComponent } from './home/game-item/game-item.component';
     AppComponent,
     HomeComponent,
     DetailsComponent,
-    GameItemComponent
+    SidenavComponent,
   ],
   imports: [
     SharedModule,
-    DragScrollModule
+    DragScrollModule,
   ],
   providers: [SteamService],
   bootstrap: [AppComponent]

@@ -7,17 +7,15 @@
 }
 
 mat-card {
+    height: 624px; //Or any other height you wish
+    overflow-y: scroll;
     margin-top: 0;
     background: rgba(255, 255, 255, 0.4);
-}
-
-strong {
-    display: inline-block;
-    margin-bottom: .5em;
-}
-
-span {
-    margin-left: .5em;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0 8px 8px 8px rgba(0,0,0,.2), 0 8px 8px 0 rgba(0,0,0,.14), 0 8px 8px 0 rgba(0,0,0,.12) !important;
+        transition: background .4s cubic-bezier(.25,.4,.25,1),box-shadow 240ms cubic-bezier(.4,0,.2,1);
+    }
 }
 
 .title {
@@ -27,12 +25,16 @@ span {
 
 .thumbnail {
     overflow:hidden;
-    -webkit-border-radius:90px;
-    -moz-border-radius:90px;
-    border-radius:90px;
-    width:130px;
-    height:130px;
+    width:300px;
+    height:150px;
     margin-right: 1em;
+    box-shadow: 0 4px 4px 4px rgba(0,0,0,.2), 0 4px 4px 0 rgba(0,0,0,.14), 0 4px 4px 0 rgba(0,0,0,.12) !important;
+}
+
+strong {
+    display: inline-block;
+    margin-bottom: .5em;
+    font-size: 1.2em;
 }
 
 .row {
@@ -40,9 +42,25 @@ span {
     margin-top: 2em;
 }
 
+span {
+    margin-left: .5em;
+}
+
 .site {
     color: #000; 
     text-decoration: underline;
+}
+
+.website {
+    display: inline-flex;
+}
+
+p {
+    margin: 0;
+}
+
+.cat {
+    margin-bottom: .4em;
 }
 
 .categorie {
@@ -64,7 +82,8 @@ span {
 }
 
 .screen {
-    display: block;
+
+    display: flex;
     margin-left: 0;
 }
 
@@ -74,7 +93,32 @@ span {
 }
 
 .screenshots {
-    width:156px;
-    height:156px;
+    margin: 2.6px;
+    width:250px;
+    height:150px;
+    transition: transform .3s;
     justify-content: space-around;
+    box-shadow: 0 4px 4px 4px rgba(0,0,0,.2), 0 4px 4px 0 rgba(0,0,0,.14), 0 4px 4px 0 rgba(0,0,0,.12) !important;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.container {
+    margin-top: 1.5em;
+    width: 100%;
+    box-shadow: 0 4px 4px 4px rgba(0,0,0,.2), 0 4px 4px 0 rgba(0,0,0,.14), 0 4px 4px 0 rgba(0,0,0,.12) !important;
+
+}
+
+.items {
+    width:250px;
+    height:200px;
+}
+
+.left, .right { 
+    margin: 30px;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
 }

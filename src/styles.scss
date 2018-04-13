@@ -4,7 +4,10 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 body {
-    background: #DCDCDC;
+    background-image: radial-gradient(circle, #457195, #3b6385, #325675, #284965, #1f3d56);
+    height: 100%; 
+    background-position: center;
+    background-size: cover;
     font-family: 'Cursive', 'Arial';
     color: #333;
     padding-top: 0;
@@ -27,6 +30,6 @@ a {
 }
 
 mat-card {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.4) !important;
     margin: 3rem;
 }

@@ -1,6 +1,6 @@
-<div class="main" [style.background-image]="'url(' + game.background + ')'">
-  <mat-card>
-    <ng-container *ngIf="game; else loading">
+<ng-container *ngIf="game; else loading">
+  <div class="main" [style.background-image]="'url(' + game.background + ')'">
+    <mat-card>
       <mat-card-title>
         <div class="title">
           <img [src]="game.header_image" class="thumbnail">
@@ -15,35 +15,38 @@
         <div class="row">
           <div>
             <strong>Age</strong>
-            <span class="age">{{ game.required_age }}+</span>
+            <span>{{ game.required_age }}+</span>
           </div>
-          <div class="website">
+          <div>
             <strong>Site</strong>
-            <span>
+            <span *ngIf="game.website != null">
               <a [href]="game.website" target="_blank" class="site">{{ game.website }}</a>
+            </span>
+            <span class="website" *ngIf="game.website == null">
+              <p>Aucun lien disponible vers le site officiel.</p>
             </span>
           </div>
           <div>
             <strong>Genre</strong>
-            <span class="genre" *ngFor="let genre of game.genres">{{ genre.description }}</span>
+            <span *ngFor="let genre of game.genres">{{ genre.description }}</span>
           </div>
           <div>
             <strong>Catégories</strong>
-            <div>
+            <div class="cat">
               <span class="categorie" *ngFor="let categorie of game.categories">{{ categorie.description }}.</span>
             </div>
           </div>
           <div>
             <strong>Développeurs</strong>
-            <span class="developers" *ngFor="let developer of game.developers">{{ developer }}</span>
+            <span *ngFor="let developer of game.developers">{{ developer }}</span>
           </div>
           <div>
             <strong>Editeurs</strong>
-            <span class="publishers" *ngFor="let publisher of game.publishers">{{ publisher }}</span>
+            <span *ngFor="let publisher of game.publishers">{{ publisher }}</span>
           </div>
           <div>
             <strong>Date</strong>
-            <span class="date">{{ game.release_date.date }}</span>
+            <span>{{ game.release_date.date }}</span>
           </div>
           <div class="prix">
             <strong class="titleprix">Prix</strong>
@@ -57,18 +60,19 @@
             </div>
           </div>
         </div>
-      </mat-card-content>
-      <div>
-        <strong class="screen">Screenshots</strong>
-        <div class="size" *ngFor="let screenshot of game.screenshots">
-          <a [href]="screenshot.path_full" target="_blank">
-            <img class="screenshots" [src]="screenshot.path_thumbnail">
-          </a>
+        <div>
+          <strong class="screen">Screenshots</strong>
+          <div class="size" *ngFor="let screenshot of game.screenshots">
+            <a [href]="screenshot.path_full" target="_blank">
+              <img class="screenshots" [src]="screenshot.path_thumbnail">
+            </a>
+          </div>
         </div>
-      </div>
-    </ng-container>
-    <ng-template #loading>
-      <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
-    </ng-template>
-  </mat-card>
-</div>
+      </mat-card-content>
+
+      <ng-template #loading>
+        <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+      </ng-template>
+    </mat-card>
+  </div>
+</ng-container>
